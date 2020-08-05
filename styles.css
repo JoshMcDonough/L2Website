@@ -46,11 +46,12 @@ nav a:hover {
     font-size: 30px;
 }
 
-nav, h2 {
+section h2 {
+    text-align: center;
     color: black;
-    grid-column: 1/2;
-    justify-self: center;  
+    justify-self: center;
     font-family: 'Anton', sans-serif; 
+    font-size: 40px;
 }
 
 .navBox {
@@ -67,8 +68,13 @@ section {
     opacity: 60%;
     grid-row: 2/4;
     height: 70vh;
+    overflow: scroll;
+    
 }
 
-section, p {
+section p {
+    font-size: 20px;
     padding-top: 0px;
+    text-align: center;
+    margin: 0px 10px;
 } 
