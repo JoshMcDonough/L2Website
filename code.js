@@ -1,5 +1,5 @@
-var questions = [
-                'How do you kill a zombie', //0
+var questions = [ //Questions for Quiz Page
+                'How do you kill a zombie?', //0
                 'How do you hide from a Zombie?', //1
                 'How do you distract a Zombie?', //2
                 'How do you escape a Zombie horde?', //3
@@ -7,7 +7,7 @@ var questions = [
                 'You find yourself backed into a corner by a horde. What do you do?' //5
                  ];
 
-var options = [
+var options = [ //Options for the Questions
             [
              'Smash its body with something', //0
              'Cut its head off', //1
@@ -40,19 +40,19 @@ var options = [
             ] //[5][0-2]
               ];
 
-var randQ = 0;
+var randQ = 0;//Lets me use randQ in other functions
 
-function loadQuestion() {
+function loadQuestion() {//Randomises what question is shown on quiz page.
      randQ = Math.floor(Math.random() * questions.length);
     document.getElementById('question').innerHTML = questions[randQ];
 
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 3; i++) {//Matches the options with the question.
         document.getElementById('otext' + i).innerHTML = options[randQ][i];
     }
 }
 
 
-function check() {
+function check() {//Checks if the answer is correct
 
     for (var i = 0; i < 3; i++) {
         if (document.getElementById('option' + i).checked) {
@@ -123,12 +123,12 @@ if (randQ == 3) {
         }
     }
     
-    setTimeout(
+    setTimeout(//resets the page after 3 seconds to ask the user another question.
         function(){window.location.href='quiz.html';}
         ,3000);
 }
 
-window.onload = function () {
+window.onload = function () {// Loads the question on quiz page.
     loadQuestion();
 
 }
