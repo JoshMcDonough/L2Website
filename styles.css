@@ -14,6 +14,14 @@ html {
     grid-template-rows: 15vh 35vh 35vh 15vh;
     overflow: hidden;
 }
+
+.gallery {
+    display: grid;
+    grid-template-columns: 15vw 15vw 15vw 15vw;
+    grid-template-rows: repeat(2, 32vh);
+    overflow: hidden;
+}
+
 /*Nav style*/
 nav {
     margin-bottom: 0;
@@ -21,7 +29,7 @@ nav {
     font-family: 'Anton', sans-serif;
 }
 
-nav h1{
+nav h1 {
     font-size: 30px;
 }
 
@@ -95,6 +103,13 @@ section h6 {
     margin: 5px 10px;
 }
 
+/*Nested Grid*/
+img {
+    grid-column: 1/2;
+    width: 100%;
+    height: 100%;
+}
+
 
 /*Javascript style*/
 
@@ -112,6 +127,3 @@ section h6 {
     font-size: 30px;
     margin: 10px;
 }
-
-
-
