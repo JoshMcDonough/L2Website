@@ -40,19 +40,19 @@ var options = [ //Options for the Questions
             ] //[5][0-2]
               ];
 
-var randQ = 0;//Lets me use randQ in other functions
+var randQ = 0; //Lets me use randQ in other functions
 
-function loadQuestion() {//Randomises what question is shown on quiz page.
-     randQ = Math.floor(Math.random() * questions.length);
+function loadQuestion() { //Randomises what question is shown on quiz page.
+    randQ = Math.floor(Math.random() * questions.length);
     document.getElementById('question').innerHTML = questions[randQ];
 
-    for (var i = 0; i < 3; i++) {//Matches the options with the question.
+    for (var i = 0; i < 3; i++) { //Matches the options with the question.
         document.getElementById('otext' + i).innerHTML = options[randQ][i];
     }
 }
 
 
-function check() {//Checks if the answer is correct
+function check() { //Checks if the answer is correct
 
     for (var i = 0; i < 3; i++) {
         if (document.getElementById('option' + i).checked) {
@@ -71,7 +71,7 @@ function check() {//Checks if the answer is correct
     }
 
 
-if (randQ == 1) {
+    if (randQ == 1) {
         if (answer == 2) {
             document.getElementById('result').innerHTML = 'Correct!';
             document.getElementById('result').style.color = 'green';
@@ -82,7 +82,7 @@ if (randQ == 1) {
     }
 
 
-if (randQ == 2) {
+    if (randQ == 2) {
         if (answer == 1) {
             document.getElementById('result').innerHTML = 'Correct!';
             document.getElementById('result').style.color = 'green';
@@ -93,7 +93,7 @@ if (randQ == 2) {
     }
 
 
-if (randQ == 3) {
+    if (randQ == 3) {
         if (answer == 0) {
             document.getElementById('result').innerHTML = 'Correct!';
             document.getElementById('result').style.color = 'green';
@@ -102,7 +102,7 @@ if (randQ == 3) {
             document.getElementById('result').style.color = 'red';
         }
     }
-    
+
     if (randQ == 4) {
         if (answer == 0) {
             document.getElementById('result').innerHTML = 'Correct!';
@@ -112,7 +112,7 @@ if (randQ == 3) {
             document.getElementById('result').style.color = 'red';
         }
     }
-    
+
     if (randQ == 5) {
         if (answer == 2) {
             document.getElementById('result').innerHTML = 'Correct!';
@@ -122,13 +122,14 @@ if (randQ == 3) {
             document.getElementById('result').style.color = 'red';
         }
     }
-    
-    setTimeout(//resets the page after 3 seconds to ask the user another question.
-        function(){window.location.href='quiz.html';}
-        ,3000);
+
+    setTimeout( //resets the page after 3 seconds to ask the user another question.
+        function () {
+            window.location.href = 'quiz.html';
+        }, 3000);
 }
 
-window.onload = function () {// Loads the question on quiz page.
+window.onload = function () { // Loads the question on quiz page.
     loadQuestion();
 
 }
